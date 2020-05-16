@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFA125FB-BA8D-4049-98DB-3CEDDDF587D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyNrf</RootNamespace>
+    <AssemblyName>MyNrf</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\steering_wheel_.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MyNrf.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1CD561B5D1C45D00037C857E57BE9DDAC4322877</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MyNrf_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MyNrf_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="csgl">
+      <HintPath>FakesAssemblies\csgl.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitMapRegion.cs" />
+    <Compile Include="CCDPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CCDPictureBox.Designer.cs">
+      <DependentUpon>CCDPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Const_Set.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Const_Set.Designer.cs">
+      <DependentUpon>Const_Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAGFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyAGFrom.Designer.cs">
+      <DependentUpon>MyAGFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAGWave.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyButton.Designer.cs">
+      <DependentUpon>MyButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="MyCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyCopy.Designer.cs">
+      <DependentUpon>MyCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyCurveFitting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyCurveFitting.Designer.cs">
+      <DependentUpon>MyCurveFitting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDataInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyDataToCopy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDataToCopy.Designer.cs">
+      <DependentUpon>MyDataToCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDependencyProperty.cs" />
+    <Compile Include="MyFitColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyFitColor.Designer.cs">
+      <DependentUpon>MyFitColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm.Designer.cs">
+      <DependentUpon>MyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mylabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mylabel.Designer.cs">
+      <DependentUpon>Mylabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyMath.cs" />
+    <Compile Include="MyMin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyMin.Designer.cs">
+      <DependentUpon>MyMin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyOpenGLBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mypaint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mypaint.Designer.cs">
+      <DependentUpon>Mypaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MYPar_Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MYPar_Set.Designer.cs">
+      <DependentUpon>MYPar_Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyPictureBox.Designer.cs">
+      <DependentUpon>MyPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyReSetControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyRichTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyRichTextBox.Designer.cs">
+      <DependentUpon>MyRichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MySetup.Designer.cs">
+      <DependentUpon>MySetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyTextBox.Designer.cs">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTrackBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyTrackBar.Designer.cs">
+      <DependentUpon>MyTrackBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTransparentLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyTransparentLabel.Designer.cs">
+      <DependentUpon>MyTransparentLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUartDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyUartDebug.Designer.cs">
+      <DependentUpon>MyUartDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyXmlConfig.cs" />
+    <Compile Include="My_Const_Par_Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My_Const_Par_Set.Designer.cs">
+      <DependentUpon>My_Const_Par_Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenGL的一些操作\GLFont.cs" />
+    <Compile Include="OpenGL的一些操作\OpenGLPublicFunction.cs" />
+    <Compile Include="Par_Set.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Par_Set.Designer.cs">
+      <DependentUpon>Par_Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingleProcess.cs" />
+    <Compile Include="WIN32所需要使用的API\Win32.cs" />
+    <Compile Include="这里写仿真程序\CCDSmartProcess.cs" />
+    <Compile Include="这里写仿真程序\SmartProcess.cs" />
+    <EmbeddedResource Include="Const_Set.resx">
+      <DependentUpon>Const_Set.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAGFrom.resx">
+      <DependentUpon>MyAGFrom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyCopy.resx">
+      <DependentUpon>MyCopy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyCurveFitting.resx">
+      <DependentUpon>MyCurveFitting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDataToCopy.resx">
+      <DependentUpon>MyDataToCopy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFitColor.resx">
+      <DependentUpon>MyFitColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mypaint.resx">
+      <DependentUpon>Mypaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MYPar_Set.resx">
+      <DependentUpon>MYPar_Set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyRichTextBox.resx">
+      <DependentUpon>MyRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MySetup.resx">
+      <DependentUpon>MySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTextBox.resx">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTrackBar.resx">
+      <DependentUpon>MyTrackBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUartDebug.resx">
+      <DependentUpon>MyUartDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My_Const_Par_Set.resx">
+      <DependentUpon>My_Const_Par_Set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Par_Set.resx">
+      <DependentUpon>Par_Set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="MyNrf_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\金属纹理.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicThr.Image.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PicFit.Image.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transrichbox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transrichbox1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CCD_Fit.bmp" />
+    <None Include="Resources\CCD_Real.bmp" />
+    <Content Include="Resources\steering_wheel_.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
